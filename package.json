@@ -1,0 +1,48 @@
+{
+  "name": "dsh-wsl-shell",
+  "version": "0.2.0",
+  "description": "ctx.shell executor for DSH that runs every command through WSL bash (wsl.exe -d <distro> -e bash -c) over ctx.subprocess. No sandbox below WSL: a destructive-command gate refuses the handful of commands that damage the machine.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etherealviator/dsh-wsl-shell.git"
+  },
+  "homepage": "https://github.com/etherealviator/dsh-wsl-shell#readme",
+  "bugs": {
+    "url": "https://github.com/etherealviator/dsh-wsl-shell/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "wsl",
+    "windows",
+    "linux",
+    "shell",
+    "bash",
+    "interop"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "compatibility": ">=0.2.0-rc.1 <0.3.0-0"
+  }
+}
